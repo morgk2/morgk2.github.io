@@ -5,7 +5,7 @@ const PrivacyPolicy = () => {
   return (
     <div className="privacy-page">
       <div className="privacy-container">
-        <h1>Privacy Policy for Alifi Pet Care App</h1>
+        <h1>Privacy Policy</h1>
         
         <p><strong>Last Updated:</strong> 8/31/2025</p>
         <p><strong>Version:</strong> 1.0</p>

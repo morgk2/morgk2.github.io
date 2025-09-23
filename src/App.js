@@ -1,15 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
 import TermsOfUse from './pages/TermsOfUse';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import PrismaticBurst from './components/PrismaticBurst';
 
-function App() {
+function AppContent() {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
   return (
-    <Router>
-      <div className="App">
+    <div className="App">
+      {isHomePage && (
         <div className="background-layer">
           <PrismaticBurst
             animationType="rotate3d"
@@ -24,14 +27,22 @@ function App() {
             colors={['#000000', '#333333', '#666666']}
           />
         </div>
-        <div className="content-layer">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/terms" element={<TermsOfUse />} />
-            <Route path="/privacy" element={<PrivacyPolicy />} />
-          </Routes>
-        </div>
+      )}
+      <div className="content-layer">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/terms" element={<TermsOfUse />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+        </Routes>
       </div>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 }
