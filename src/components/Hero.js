@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Hero.css';
 import mainLogo from '../assets/logos/logo_cropped.png';
 
@@ -27,21 +28,21 @@ const Hero = () => {
         
         <div className="right-text">
           <nav className="navigation-links">
-            <a href="#features" className="nav-button">
+            <Link to="/" className="nav-button">
               <span className="nav-link">App</span>
               <span className="nav-link">features</span>
-            </a>
-            <a href="#terms" className="nav-button">
+            </Link>
+            <Link to="/terms" className="nav-button">
               <span className="nav-link">Terms of</span>
               <span className="nav-link">use</span>
-            </a>
-            <a href="#privacy" className="nav-button">
+            </Link>
+            <Link to="/privacy" className="nav-button">
               <span className="nav-link">Privacy</span>
               <span className="nav-link">Policy</span>
-            </a>
-            <a href="#faq" className="nav-button">
+            </Link>
+            <Link to="/" className="nav-button">
               <span className="nav-link">FAQ</span>
-            </a>
+            </Link>
           </nav>
         </div>
       </div>
