@@ -28,7 +28,7 @@ const Hero = () => {
         
         <div className="right-text">
           <nav className="navigation-links">
-            <Link to="/" className="nav-button">
+            <Link to="/features" className="nav-button">
               <span className="nav-link">App</span>
               <span className="nav-link">features</span>
             </Link>
