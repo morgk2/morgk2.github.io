@@ -1,17 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.a448d5ea.css",
-    "main.js": "/static/js/main.df295b4d.js",
+    "main.css": "/static/css/main.72e1969e.css",
+    "main.js": "/static/js/main.ad3aa750.js",
+    "static/media/landing.jpeg": "/static/media/landing.368b3cb16a1a5a29fdb2.jpeg",
     "static/media/landingpage.jpeg": "/static/media/landingpage.239e5bae2318bf374603.jpeg",
+    "static/media/alifiorange.jpeg": "/static/media/alifiorange.4660ff695c7d780708df.jpeg",
+    "static/media/map.jpg": "/static/media/map.b78d552036a0509615bb.jpg",
+    "static/media/store.jpg": "/static/media/store.47baf597c5f4c3d8c0b1.jpg",
+    "static/media/vet.jpg": "/static/media/vet.8597709fd3e1b2e1c37d.jpg",
+    "static/media/adoption.jpg": "/static/media/adoption.59414dc60137ac4490eb.jpg",
+    "static/media/petprofiles.jpg": "/static/media/petprofiles.5589f4b7da1d30008cf6.jpg",
+    "static/media/features.jpg": "/static/media/features.8c4f9cf3e859ecfae684.jpg",
+    "static/media/featuresphone.jpg": "/static/media/featuresphone.5f19ccc40880eb4c895e.jpg",
     "static/media/Because..png": "/static/media/Because..6bb7d7c7a548c8cc952d.png",
     "static/media/logo_cropped.png": "/static/media/logo_cropped.a82d2bc0a3f0b493f9f6.png",
+    "static/media/button-app@2x.eb284c14.svg": "/static/media/button-app@2x.eb284c14.422145ea92c6d151a226ef925c66f3ca.svg",
     "static/media/header_title.png": "/static/media/header_title.361d611017cd81685b1f.png",
+    "static/media/google-play-button.317b0f82.svg": "/static/media/google-play-button.317b0f82.ac1c9e32dd58b91c77850cc6b3a16dc3.svg",
     "index.html": "/index.html",
-    "main.a448d5ea.css.map": "/static/css/main.a448d5ea.css.map",
-    "main.df295b4d.js.map": "/static/js/main.df295b4d.js.map"
+    "main.72e1969e.css.map": "/static/css/main.72e1969e.css.map",
+    "main.ad3aa750.js.map": "/static/js/main.ad3aa750.js.map"
   },
   "entrypoints": [
-    "static/css/main.a448d5ea.css",
-    "static/js/main.df295b4d.js"
+    "static/css/main.72e1969e.css",
+    "static/js/main.ad3aa750.js"
   ]
 }
