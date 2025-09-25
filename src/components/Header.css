@@ -1,13 +1,124 @@
 .header {
-  position: absolute;
+  position: fixed;
   top: 2rem;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 10;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .logo {
-  height: 3rem;
+  height: 2rem;
   width: auto;
   margin: 0;
+  position: absolute;
+  left: 1rem;
+}
+
+.header-logo {
+  height: 2rem;
+  width: auto;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.header-glass {
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+
+.hamburger-button {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 1px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.hamburger-button:hover .hamburger-line {
+  background-color: #f0f0f0;
+}
+
+/* Animation when menu is open (X shape) */
+.hamburger-button.open .hamburger-line:first-child {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.hamburger-button.open .hamburger-line:last-child {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+/* Styles for when header is over white background */
+.header.over-white .logo,
+.header.over-white .header-logo {
+  filter: brightness(0);
+}
+
+.header.over-white .hamburger-line {
+  background-color: #000000;
+}
+
+.header.over-white .hamburger-button:hover .hamburger-line {
+  background-color: #333333;
+}
+
+/* Scroll Text Styles */
+.scroll-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  color: #000000;
+  text-align: center;
+  z-index: 50;
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+  pointer-events: none;
+  max-width: 80%;
+  line-height: 1.2;
+}
+
+/* Responsive text sizing */
+@media (max-width: 768px) {
+  .scroll-text {
+    font-size: 2rem;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-text {
+    font-size: 1.5rem;
+    max-width: 95%;
+  }
 }

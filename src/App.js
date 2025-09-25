@@ -5,30 +5,13 @@ import Home from './pages/Home';
 import AppFeatures from './pages/AppFeatures';
 import TermsOfUse from './pages/TermsOfUse';
 import PrivacyPolicy from './pages/PrivacyPolicy';
-import PrismaticBurst from './components/PrismaticBurst';
 
 function AppContent() {
   const location = useLocation();
-  const isHomePage = location.pathname === '/';
-
+  const isHomepage = location.pathname === '/';
+  
   return (
-    <div className="App">
-      {isHomePage && (
-        <div className="background-layer">
-          <PrismaticBurst
-            animationType="rotate3d"
-            intensity={2}
-            speed={0.5}
-            distort={1.0}
-            paused={false}
-            offset={{ x: 0, y: 0 }}
-            hoverDampness={0.25}
-            rayCount={24}
-            mixBlendMode="normal"
-            colors={['#000000', '#333333', '#666666']}
-          />
-        </div>
-      )}
+    <div className={`App ${isHomepage ? 'homepage' : ''}`}>
       <div className="content-layer">
         <Routes>
           <Route path="/" element={<Home />} />
