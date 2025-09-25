@@ -108,11 +108,271 @@
   line-height: 1.2;
 }
 
+.scroll-text.features-text {
+  font-size: 2rem;
+  text-align: left;
+  max-width: 70%;
+  line-height: 1.4;
+  left: 20%;
+  transform: translateY(-90%);
+}
+
+.features-image {
+  position: fixed;
+  top: 55%;
+  left: 19%;
+  transform: translateY(10%);
+  max-width: 60%;
+  min-width: 500px;
+  height: auto;
+  z-index: 50;
+  opacity: 0;
+  transition: opacity 0.1s ease-out;
+  pointer-events: none;
+}
+
+/* Mobile positioning for features image */
+@media (max-width: 768px) {
+  .features-image {
+    left: 50%;
+    transform: translate(-50%, 10%);
+    max-width: 80%;
+    min-width: 300px;
+  }
+  
+  .scroll-text.features-text {
+    left: 10%;
+    transform: translateY(-90%);
+  }
+}
+
+/* Carousel Styles */
+.carousel-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 50;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  pointer-events: auto;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.carousel-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.carousel-navigation {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.carousel-wrapper {
+  flex: 1;
+  overflow: hidden;
+}
+
+.carousel-arrow {
+  background: none;
+  border: none;
+  font-size: 48px;
+  font-weight: 300;
+  color: #000000;
+  cursor: pointer;
+  padding: 0;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-arrow:hover {
+  opacity: 0.6;
+}
+
+.carousel-arrow-left {
+  order: 1;
+}
+
+.carousel-wrapper {
+  order: 2;
+}
+
+.carousel-arrow-right {
+  order: 3;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 2rem;
+  transition: transform 0.3s ease-out;
+  padding: 1rem 0;
+  cursor: grab;
+  user-select: none;
+}
+
+.carousel-track:active {
+  cursor: grabbing;
+}
+
+.carousel-item {
+  flex-shrink: 0;
+  width: 300px;
+  text-align: center;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.carousel-item img:hover {
+  transform: scale(1.05);
+}
+
+.carousel-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #000000;
+  margin-top: 1rem;
+}
+
+/* Logo and App Store Buttons */
+.logo-buttons-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% + 600px));
+  z-index: 50;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.alifi-orange-logo {
+  width: 120px;
+  height: auto;
+  max-width: 100%;
+}
+
+.app-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.app-button {
+  height: 60px;
+  width: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.app-button:hover {
+  transform: scale(1.05);
+}
+
+.app-button:last-child {
+  border: 1px solid #ababab;
+  border-radius: 8px;
+}
+
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  border-top: 1px solid #e0e0e0;
+  z-index: 10;
+  padding: 1rem 0;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  color: #666666;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  color: #666666;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #000000;
+}
+
+/* Responsive footer */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .footer-links {
+    gap: 1rem;
+  }
+}
+
 /* Responsive text sizing */
 @media (max-width: 768px) {
   .scroll-text {
     font-size: 2rem;
     max-width: 90%;
+  }
+  
+  .scroll-text.features-text {
+    font-size: 1.5rem;
+    text-align: left;
+    max-width: 85%;
   }
 }
 
@@ -120,5 +380,11 @@
   .scroll-text {
     font-size: 1.5rem;
     max-width: 95%;
+  }
+  
+  .scroll-text.features-text {
+    font-size: 1.2rem;
+    text-align: left;
+    max-width: 90%;
   }
 }

@@ -45,6 +45,7 @@ const DEFAULT_ITEMS = [
 export default function BubbleMenu({
   logo,
   onMenuClick,
+  onLinkClick,
   className,
   style,
   menuAriaLabel = 'Toggle menu',
@@ -69,9 +70,15 @@ export default function BubbleMenu({
     .filter(Boolean)
     .join(' ');
 
-  const handleLinkClick = () => {
+  const handleLinkClick = (e) => {
+    const href = e.currentTarget.getAttribute('href');
     setShowOverlay(false);
     onMenuClick?.(false);
+    
+    // Call onLinkClick with href, and if it returns true, prevent default navigation
+    if (onLinkClick?.(href)) {
+      e.preventDefault();
+    }
   };
 
   useEffect(() => {

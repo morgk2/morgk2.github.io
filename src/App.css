@@ -9,7 +9,14 @@
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  min-height: 700vh;
+  min-height: 1500vh;
+}
+
+/* Mobile background image */
+@media (max-width: 768px) {
+  .App.homepage {
+    background-image: url('./assets/images/landing.jpeg');
+  }
 }
 
 .content-layer {
@@ -24,7 +31,7 @@
 
 .content-layer::after {
   content: '';
-  height: 600vh;
+  height: 1400vh;
   width: 100%;
   background-color: #ffffff;
   position: absolute;
