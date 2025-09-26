@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.70548aa0.css",
-    "main.js": "/static/js/main.fa4a4099.js",
+    "main.css": "/static/css/main.efd9ddcf.css",
+    "main.js": "/static/js/main.0afa0fe7.js",
     "static/media/landing.jpeg": "/static/media/landing.368b3cb16a1a5a29fdb2.jpeg",
     "static/media/landingpage.jpeg": "/static/media/landingpage.239e5bae2318bf374603.jpeg",
+    "static/media/Gemini_Generated_Image_7d8rhk7d8rhk7d8r.png": "/static/media/Gemini_Generated_Image_7d8rhk7d8rhk7d8r.18012ceedf19f19dc1fc.png",
     "static/media/alifiorange.jpeg": "/static/media/alifiorange.4660ff695c7d780708df.jpeg",
     "static/media/map.jpg": "/static/media/map.b78d552036a0509615bb.jpg",
     "static/media/store.jpg": "/static/media/store.47baf597c5f4c3d8c0b1.jpg",
@@ -18,11 +19,11 @@
     "static/media/header_title.png": "/static/media/header_title.361d611017cd81685b1f.png",
     "static/media/google-play-button.317b0f82.svg": "/static/media/google-play-button.317b0f82.ac1c9e32dd58b91c77850cc6b3a16dc3.svg",
     "index.html": "/index.html",
-    "main.70548aa0.css.map": "/static/css/main.70548aa0.css.map",
-    "main.fa4a4099.js.map": "/static/js/main.fa4a4099.js.map"
+    "main.efd9ddcf.css.map": "/static/css/main.efd9ddcf.css.map",
+    "main.0afa0fe7.js.map": "/static/js/main.0afa0fe7.js.map"
   },
   "entrypoints": [
-    "static/css/main.70548aa0.css",
-    "static/js/main.fa4a4099.js"
+    "static/css/main.efd9ddcf.css",
+    "static/js/main.0afa0fe7.js"
   ]
 }
