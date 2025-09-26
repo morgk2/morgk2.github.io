@@ -43,6 +43,7 @@ const Header = () => {
   const [showFooter, setShowFooter] = useState(false);
   const [footerOpacity, setFooterOpacity] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [showDownloadDialog, setShowDownloadDialog] = useState(false);
 
   const handleMenuClick = (isOpen) => {
     if (isOpen) {
@@ -103,6 +104,16 @@ const Header = () => {
     
     return false; // Allow default navigation for other links
   };
+
+  const handleDownloadClick = (e) => {
+    e.preventDefault();
+    setShowDownloadDialog(true);
+  };
+
+  const handleCloseDialog = () => {
+    setShowDownloadDialog(false);
+  };
+
 
   const scrollCarousel = (direction) => {
     const scrollAmount = 320; // Width of carousel item + gap
@@ -626,8 +637,18 @@ const Header = () => {
         >
           <img src={alifiOrangeLogo} alt="Alifi" className="alifi-orange-logo" />
           <div className="app-buttons">
-            <img src={googlePlayButton} alt="Get it on Google Play" className="app-button" />
-            <img src={appStoreButton} alt="Download on the App Store" className="app-button" />
+            <img 
+              src={googlePlayButton} 
+              alt="Get it on Google Play" 
+              className="app-button" 
+              onClick={handleDownloadClick}
+            />
+            <img 
+              src={appStoreButton} 
+              alt="Download on the App Store" 
+              className="app-button" 
+              onClick={handleDownloadClick}
+            />
           </div>
         </div>
       )}
@@ -645,10 +666,29 @@ const Header = () => {
           <div className="footer-links">
             <Link to="/privacy" className="footer-link">Privacy Policy</Link>
             <Link to="/terms" className="footer-link">Terms of Use</Link>
+            <Link to="/account-deletion" className="footer-link">
+              Request Account Deletion
+            </Link>
           </div>
         </div>
       </footer>
       )}
+      
+      {/* Download Dialog */}
+      {showDownloadDialog && (
+        <div className="download-dialog-overlay" onClick={handleCloseDialog}>
+          <div className="download-dialog" onClick={(e) => e.stopPropagation()}>
+            <div className="download-dialog-content">
+              <h3>App Coming Soon!</h3>
+              <p>The app is still in development. Thank you for your interest!</p>
+              <button className="download-dialog-button" onClick={handleCloseDialog}>
+                Got it
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
     </>
   );
 };

@@ -1,0 +1,382 @@
+.account-deletion-page {
+  height: 100vh;
+  width: 100vw;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.alifi-logo {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  width: 60px;
+  height: auto;
+  z-index: 10;
+}
+
+.language-switcher {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.lang-btn {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #666666;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 40px;
+}
+
+.lang-btn:hover {
+  background: #f3f4f6;
+  border-color: #e69e02;
+  color: #1a1a1a;
+}
+
+.lang-btn.active {
+  background: #e69e02;
+  border-color: #e69e02;
+  color: #ffffff;
+}
+
+.deletion-container {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  padding: 3rem;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  animation: slideInUp 0.6s ease-out;
+  overflow-y: auto;
+  margin: auto;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.deletion-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.deletion-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+}
+
+.deletion-header p {
+  font-size: 1.1rem;
+  color: #666666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.deletion-form {
+  margin-bottom: 2.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: #1a1a1a;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #e69e02;
+  box-shadow: 0 0 0 3px rgba(230, 158, 2, 0.1);
+}
+
+.form-group input.error {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.error-message {
+  display: block;
+  font-size: 0.875rem;
+  color: #ef4444;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.cancel-button {
+  padding: 1rem 2rem;
+  background-color: #f3f4f6;
+  color: #666666;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.cancel-button:hover {
+  background-color: #e5e7eb;
+  color: #1a1a1a;
+}
+
+.submit-button {
+  padding: 1rem 2rem;
+  background: #e69e02;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 150px;
+}
+
+.submit-button:hover:not(.disabled) {
+  background: #d18a00;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(230, 158, 2, 0.3);
+}
+
+.submit-button.disabled {
+  background: #d1d5db;
+  color: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.deletion-info {
+  background: rgba(230, 158, 2, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border-left: 4px solid #e69e02;
+}
+
+.deletion-info h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+}
+
+.deletion-info ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.deletion-info li {
+  color: #666666;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.deletion-info li:last-child {
+  margin-bottom: 0;
+}
+
+/* Success Message Styles */
+.success-message {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin: 0 auto 2rem auto;
+  animation: successPulse 0.6s ease-out;
+}
+
+@keyframes successPulse {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.success-message h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+}
+
+.success-message p {
+  font-size: 1.1rem;
+  color: #666666;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+}
+
+.success-message p:last-of-type {
+  margin-bottom: 2rem;
+}
+
+.back-home-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: #e69e02;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.back-home-button:hover {
+  background: #d18a00;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(230, 158, 2, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .account-deletion-page {
+    padding: 1rem;
+    height: 100vh;
+  }
+  
+  .alifi-logo {
+    top: 1rem;
+    left: 1rem;
+    width: 50px;
+  }
+  
+  .language-switcher {
+    top: 1rem;
+    right: 1rem;
+  }
+  
+  .lang-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    min-width: 35px;
+  }
+  
+  .deletion-container {
+    padding: 2rem;
+    max-height: 95vh;
+  }
+  
+  .deletion-header h1 {
+    font-size: 2rem;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .cancel-button,
+  .submit-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .account-deletion-page {
+    padding: 0.5rem;
+    height: 100vh;
+  }
+  
+  .alifi-logo {
+    top: 0.5rem;
+    left: 0.5rem;
+    width: 45px;
+  }
+  
+  .language-switcher {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+  
+  .lang-btn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+    min-width: 30px;
+  }
+  
+  .deletion-container {
+    padding: 1.5rem;
+    max-height: 98vh;
+    border-radius: 15px;
+  }
+  
+  .deletion-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .deletion-header p {
+    font-size: 1rem;
+  }
+}

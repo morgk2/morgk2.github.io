@@ -5,10 +5,17 @@ import Home from './pages/Home';
 import AppFeatures from './pages/AppFeatures';
 import TermsOfUse from './pages/TermsOfUse';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import AccountDeletion from './pages/AccountDeletion';
 
 function AppContent() {
   const location = useLocation();
   const isHomepage = location.pathname === '/';
+  const isAccountDeletion = location.pathname === '/account-deletion';
+  
+  // Render account deletion page standalone
+  if (isAccountDeletion) {
+    return <AccountDeletion />;
+  }
   
   return (
     <div className={`App ${isHomepage ? 'homepage' : ''}`}>
