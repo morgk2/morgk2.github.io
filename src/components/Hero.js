@@ -15,6 +15,7 @@ const Hero = () => {
         <div className="center-logo">
           <div className="logo-container">
             <img src={mainLogo} alt="Alifi Logo" className="main-logo" />
+            <button className="login-button">Login to your account</button>
           </div>
         </div>
         
