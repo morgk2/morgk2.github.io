@@ -4,59 +4,17 @@
 }
 
 .App.homepage {
-  background-image: url('./assets/images/landingpage.jpeg');
+  background-color: #f0f0f0; /* Fallback color while loading */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   min-height: 1500vh;
-  position: relative;
+  transition: background-image 0.3s ease-in-out;
 }
 
-/* Low-quality background placeholder */
-.App.homepage::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.App.homepage.images-loaded {
   background-image: url('./assets/images/landingpage.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  filter: blur(10px) brightness(0.8);
-  transform: scale(1.1);
-  z-index: -2;
-  transition: opacity 0.5s ease-out;
-}
-
-/* High-quality background */
-.App.homepage::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('./assets/images/landingpage.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.5s ease-out;
-}
-
-/* Show high-quality when loaded */
-.App.homepage.loaded::after {
-  opacity: 1;
-}
-
-.App.homepage.loaded::before {
-  opacity: 0;
 }
 
 /* Safari-specific fixes */
@@ -70,15 +28,7 @@
 
 /* Mobile background image */
 @media (max-width: 768px) {
-  .App.homepage {
-    background-image: url('./assets/images/landing.jpeg');
-  }
-  
-  .App.homepage::before {
-    background-image: url('./assets/images/landing.jpeg');
-  }
-  
-  .App.homepage::after {
+  .App.homepage.images-loaded {
     background-image: url('./assets/images/landing.jpeg');
   }
   
@@ -90,13 +40,6 @@
       background-position: center top;
       -webkit-background-size: cover;
       -webkit-transform: translateZ(0); /* Force hardware acceleration */
-    }
-    
-    .App.homepage::before,
-    .App.homepage::after {
-      background-attachment: scroll;
-      background-position: center top;
-      -webkit-background-size: cover;
     }
   }
 }
@@ -120,4 +63,32 @@
   top: 100vh;
   left: 0;
   z-index: 1;
+}
+
+/* Background loading indicator */
+.background-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e0e0e0;
+  border-top: 4px solid #e69e02;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
