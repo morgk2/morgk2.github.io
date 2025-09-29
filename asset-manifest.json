@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c98cb0e7.css",
-    "main.js": "/static/js/main.09861bdd.js",
+    "main.js": "/static/js/main.553d1057.js",
     "static/media/landing.jpeg": "/static/media/landing.368b3cb16a1a5a29fdb2.jpeg",
     "static/media/landingpage.jpeg": "/static/media/landingpage.239e5bae2318bf374603.jpeg",
     "static/media/Gemini_Generated_Image_7d8rhk7d8rhk7d8r.png": "/static/media/Gemini_Generated_Image_7d8rhk7d8rhk7d8r.18012ceedf19f19dc1fc.png",
@@ -15,15 +15,15 @@
     "static/media/featuresphone.jpg": "/static/media/featuresphone.5f19ccc40880eb4c895e.jpg",
     "static/media/Because..png": "/static/media/Because..6bb7d7c7a548c8cc952d.png",
     "static/media/logo_cropped.png": "/static/media/logo_cropped.a82d2bc0a3f0b493f9f6.png",
-    "static/media/button-app@2x.eb284c14.svg": "/static/media/button-app@2x.eb284c14.422145ea92c6d151a226ef925c66f3ca.svg",
+    "static/media/button-app@2x.eb284c14.svg": "/static/media/button-app@2x.eb284c14.383c8eb712b8b6e43655881e02a0c96a.svg",
     "static/media/header_title.png": "/static/media/header_title.361d611017cd81685b1f.png",
-    "static/media/google-play-button.317b0f82.svg": "/static/media/google-play-button.317b0f82.ac1c9e32dd58b91c77850cc6b3a16dc3.svg",
+    "static/media/google-play-button.317b0f82.svg": "/static/media/google-play-button.317b0f82.4c5e13bcaac4ff78da8a290ba0d3a399.svg",
     "index.html": "/index.html",
     "main.c98cb0e7.css.map": "/static/css/main.c98cb0e7.css.map",
-    "main.09861bdd.js.map": "/static/js/main.09861bdd.js.map"
+    "main.553d1057.js.map": "/static/js/main.553d1057.js.map"
   },
   "entrypoints": [
     "static/css/main.c98cb0e7.css",
-    "static/js/main.09861bdd.js"
+    "static/js/main.553d1057.js"
   ]
 }
