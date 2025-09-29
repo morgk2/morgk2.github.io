@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c98cb0e7.css",
-    "main.js": "/static/js/main.553d1057.js",
+    "main.css": "/static/css/main.7f709b7b.css",
+    "main.js": "/static/js/main.90b65acf.js",
     "static/media/landing.jpeg": "/static/media/landing.368b3cb16a1a5a29fdb2.jpeg",
     "static/media/landingpage.jpeg": "/static/media/landingpage.239e5bae2318bf374603.jpeg",
     "static/media/Gemini_Generated_Image_7d8rhk7d8rhk7d8r.png": "/static/media/Gemini_Generated_Image_7d8rhk7d8rhk7d8r.18012ceedf19f19dc1fc.png",
@@ -19,11 +19,11 @@
     "static/media/header_title.png": "/static/media/header_title.361d611017cd81685b1f.png",
     "static/media/google-play-button.317b0f82.svg": "/static/media/google-play-button.317b0f82.4c5e13bcaac4ff78da8a290ba0d3a399.svg",
     "index.html": "/index.html",
-    "main.c98cb0e7.css.map": "/static/css/main.c98cb0e7.css.map",
-    "main.553d1057.js.map": "/static/js/main.553d1057.js.map"
+    "main.7f709b7b.css.map": "/static/css/main.7f709b7b.css.map",
+    "main.90b65acf.js.map": "/static/js/main.90b65acf.js.map"
   },
   "entrypoints": [
-    "static/css/main.c98cb0e7.css",
-    "static/js/main.553d1057.js"
+    "static/css/main.7f709b7b.css",
+    "static/js/main.90b65acf.js"
   ]
 }
