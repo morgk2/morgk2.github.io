@@ -17,7 +17,7 @@ const Hero = () => {
             <img src={mainLogo} alt="Alifi Logo" className="main-logo" />
             <button 
               className="login-button"
-              onClick={() => window.open('https://alifiapp.netlify.app', '_blank')}
+              onClick={() => window.open('https://account.alifi.app', '_blank')}
             >
               Login to your account
             </button>
