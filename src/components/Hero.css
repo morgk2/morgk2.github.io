@@ -6,6 +6,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding-top: 6rem; /* Add padding to account for fixed header */
 }
 
 .hero-content {
@@ -22,7 +23,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: -6rem;
+  margin-top: -2rem; /* Reduced negative margin to prevent collision */
 }
 
 .quote-image {
@@ -129,6 +130,10 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .hero {
+    padding-top: 8rem; /* Extra padding on mobile for header clearance */
+  }
+  
   .hero-content {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -138,6 +143,10 @@
   .left-text,
   .right-text {
     text-align: center;
+  }
+  
+  .left-text {
+    margin-top: 0; /* Remove negative margin on mobile */
   }
   
   .quote-image {
@@ -160,6 +169,10 @@
 }
 
 @media (max-width: 480px) {
+  .hero {
+    padding-top: 9rem; /* Even more padding on very small screens */
+  }
+  
   .quote-image {
     max-width: 250px;
   }

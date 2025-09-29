@@ -44,6 +44,7 @@ const Header = () => {
   const [footerOpacity, setFooterOpacity] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [showDownloadDialog, setShowDownloadDialog] = useState(false);
+  const [featuresImageLoaded, setFeaturesImageLoaded] = useState(false);
 
   const handleMenuClick = (isOpen) => {
     if (isOpen) {
@@ -189,6 +190,14 @@ const Header = () => {
       
       // When scrolled past the background image (100vh), we're over white background
       setIsOverWhite(scrollY > viewportHeight * 0.8);
+      
+      // Preload features image when we're halfway to the features section
+      const featuresStart = viewportHeight * 3.2;
+      const preloadTrigger = featuresStart * 0.5; // Start preloading at 50% of the way to features
+      
+      if (scrollY >= preloadTrigger && !featuresImageLoaded) {
+        setFeaturesImageLoaded(true);
+      }
       
       // First text animation based on scroll position
       const whiteStart = viewportHeight * 0.8;
@@ -536,6 +545,23 @@ const Header = () => {
         </div>
       )}
       
+      {/* Hidden preload image */}
+      {featuresImageLoaded && (
+        <img 
+          src={isMobile ? featuresPhoneImage : featuresImage} 
+          alt="" 
+          style={{ 
+            position: 'absolute', 
+            left: '-9999px', 
+            top: '-9999px', 
+            width: '1px', 
+            height: '1px',
+            opacity: 0,
+            pointerEvents: 'none'
+          }}
+        />
+      )}
+
       {/* Fourth Scroll Text */}
       {showFourthText && (
         <>
@@ -558,6 +584,7 @@ const Header = () => {
             alt="Alifi Features" 
             className="features-image"
             style={{ opacity: fourthTextOpacity }}
+            onLoad={() => setFeaturesImageLoaded(true)}
           />
         </>
       )}

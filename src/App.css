@@ -10,12 +10,94 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   min-height: 1500vh;
+  position: relative;
+}
+
+/* Low-quality background placeholder */
+.App.homepage::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/images/landingpage.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  filter: blur(10px) brightness(0.8);
+  transform: scale(1.1);
+  z-index: -2;
+  transition: opacity 0.5s ease-out;
+}
+
+/* High-quality background */
+.App.homepage::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/images/landingpage.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+/* Show high-quality when loaded */
+.App.homepage.loaded::after {
+  opacity: 1;
+}
+
+.App.homepage.loaded::before {
+  opacity: 0;
+}
+
+/* Safari-specific fixes */
+@supports (-webkit-touch-callout: none) {
+  .App.homepage {
+    background-attachment: scroll; /* Safari doesn't handle fixed well */
+    background-size: cover;
+    background-position: center top;
+  }
 }
 
 /* Mobile background image */
 @media (max-width: 768px) {
   .App.homepage {
     background-image: url('./assets/images/landing.jpeg');
+  }
+  
+  .App.homepage::before {
+    background-image: url('./assets/images/landing.jpeg');
+  }
+  
+  .App.homepage::after {
+    background-image: url('./assets/images/landing.jpeg');
+  }
+  
+  /* Safari mobile specific fixes */
+  @supports (-webkit-touch-callout: none) {
+    .App.homepage {
+      background-attachment: scroll;
+      background-size: cover;
+      background-position: center top;
+      -webkit-background-size: cover;
+      -webkit-transform: translateZ(0); /* Force hardware acceleration */
+    }
+    
+    .App.homepage::before,
+    .App.homepage::after {
+      background-attachment: scroll;
+      background-position: center top;
+      -webkit-background-size: cover;
+    }
   }
 }
 

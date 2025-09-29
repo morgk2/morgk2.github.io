@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
@@ -12,6 +12,23 @@ function AppContent() {
   const location = useLocation();
   const isHomepage = location.pathname === '/';
   const isAccountDeletion = location.pathname === '/account-deletion';
+  const [backgroundLoaded, setBackgroundLoaded] = useState(false);
+  
+  useEffect(() => {
+    if (isHomepage) {
+      // Preload the background image
+      const isMobile = window.innerWidth <= 768;
+      const imageUrl = isMobile 
+        ? './src/assets/images/landing.jpeg' 
+        : './src/assets/images/landingpage.jpeg';
+      
+      const img = new Image();
+      img.onload = () => {
+        setBackgroundLoaded(true);
+      };
+      img.src = imageUrl;
+    }
+  }, [isHomepage]);
   
   // Render account deletion page standalone
   if (isAccountDeletion) {
@@ -19,7 +36,7 @@ function AppContent() {
   }
   
   return (
-    <div className={`App ${isHomepage ? 'homepage' : ''}`}>
+    <div className={`App ${isHomepage ? 'homepage' : ''} ${backgroundLoaded ? 'loaded' : ''}`}>
       <div className="content-layer">
         <Routes>
           <Route path="/" element={<Home />} />
